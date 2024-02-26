@@ -1,0 +1,18 @@
+<div class="nav-bar">
+  <div class="nav-left" routerLink="list">logo</div>
+
+  <div class="container">
+
+
+    <div class="carrito" *ngIf="cantidad>0 && cantidad<= 9; else cantidadCarrito">{{cantidad}}</div>
+
+    <ng-template #cantidadCarrito >
+      <div class="carrito" *ngIf="cantidad>9">9+</div>
+    </ng-template>
+
+
+    <div class="nav-right material-symbols-outlined notify" routerLink="shoppingCart">shopping_cart</div>
+
+  </div>
+
+</div>

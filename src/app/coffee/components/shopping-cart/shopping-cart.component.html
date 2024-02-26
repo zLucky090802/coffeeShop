@@ -1,0 +1,74 @@
+<div class="cart" *ngIf="coffeeFilter.length > 0; else carritoVacio">
+  <div class="productos">
+    <div class="product" *ngFor="let producto of coffeeFilter; let i = index">
+
+      <img class="imagen" [src]="[producto.image]" />
+      <div class="texto">
+        <div class="encabezado">
+          <div class="titulo">{{producto.title}}</div>
+          <div class="precio">{{producto.price | currency}}</div>
+
+        </div>
+        <div class="ingredients">{{producto.ingredients}}</div>
+
+
+
+        <div class="footer">
+
+          <div class="cantidad">
+            <p>cantidad:</p>
+            <button (click)="decrementarCarrito(i)">-</button>
+            {{producto.cantidad}}
+            <button (click)="aumentarCarrito(i)">+</button>
+          </div>
+          <span class="material-symbols-outlined eliminar" (click)="delete(i)">
+            delete
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="total">
+
+    <h2>Resumen</h2>
+    <div class="resumen">
+      <div class="costos">
+
+        <p>subtotal</p>
+        <p>Gastos de envio y gestión estimados</p>
+
+
+        <p id="total">Total</p>
+
+
+      </div>
+
+
+
+      <div class="precios">
+        <p>{{subtotal | currency}}</p>
+        <p>Gratis</p>
+
+        <p id="total">{{subtotal | currency}}</p>
+      </div>
+    </div>
+
+
+
+    <button class="boton-pagar" (click)="openDialog('300ms','150ms')">Ir a pagar</button>
+
+  </div>
+</div>
+
+<ng-template #carritoVacio>
+  <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="">
+
+    <h3>¡Empieza un carrito de compras!</h3>
+    <p>Suma productos y consigue envío gratis.</p>
+    <button class="button" routerLink="list" (click)="reset()">Descubrir Productos</button>
+  </div>
+</ng-template>

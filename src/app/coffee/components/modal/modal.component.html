@@ -1,0 +1,38 @@
+
+
+<div class="modal-overlay" *ngIf="isOpen ">
+  <div class="modal">
+    <div class="modal-header">
+      <!-- <h1>AGREGAR PRODUCTO</h1> -->
+      <button class="material-symbols-outlined icon" (click)="closeModal()">close</button>
+    </div>
+    <div class="modal-content">
+      <img [src]="[coffeProduct.image]" alt="">
+
+        <div class="rest-content">
+          <h4>{{coffeProduct.title}}</h4>
+          <p>{{coffeProduct.ingredients}}</p>
+          <div class="container">
+            <p>{{price }}</p>
+            <div class="agregar">
+              <button (click)="disminuir()">-</button>
+              {{cantidad}}
+              <button (click)="agregar()">+</button>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      <!-- <ng-content></ng-content> -->
+
+    </div>
+    <div class="agregar-carrito">
+      <button (click)="agregarCarrito()">
+        agregar al carrito
+       </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+
+<home-page></home-page>
+
+
+
+<div class="title">
+
+  <h1 >OUR<span> PRODUCTS</span></h1>
+</div>
+
+<div class="cards">
+
+
+
+
+  <div *ngFor="let coffeeProduct of coffeeProducts" >
+    <card-coffee *ngIf="coffeeProduct.image.includes('http')" [coffeeProduct]="coffeeProduct"></card-coffee>
+
+  </div>
+
+
+</div>
+
+<footer-component></footer-component>
+
+<!-- <modal-coffee>hola</modal-coffee> -->

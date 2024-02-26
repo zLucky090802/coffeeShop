@@ -1,0 +1,29 @@
+<div class="card" *ngIf="coffeeProduct.image">
+
+  <!-- <div class="capa">
+    <p>{{coffeeProduct.description}}</p>
+    <p>{{ valor | currency}}</p>
+
+  </div> -->
+  <img [src]="[coffeeProduct.image]" class="img" />
+
+
+
+
+  <div class="footer-card">
+    <h3 >{{coffeeProduct.title}}</h3>
+    <div class="precio">
+      <p>{{valor | currency}}</p>
+      <p id="lastprice">{{'1.50' | currency}}</p>
+    </div>
+    <button (click)="open(coffeeProduct)">add to car</button>
+
+  </div>
+
+
+
+</div>
+
+
+
+
