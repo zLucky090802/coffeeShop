@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalService } from '../../services/modal-service.service';
 import { CoffeeProduct } from '../../interfaces/coffee.inteface';
 import { CoffeeService } from '../../services/coffee-service.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'modal-coffee',
@@ -52,6 +53,8 @@ export class ModalComponent  implements OnInit{
     this.coffeProduct.cantidad = this.cantidad;
     this.coffeProduct.price = this.price;
     this.coffeeService.agregarCarrito(this.coffeProduct);
+    this.closeModal()
+    
 
 
   }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { CoffeeService } from '../../services/coffee-service.service';
 import { CoffeeProduct } from '../../interfaces/coffee.inteface';
 import { ModalService } from '../../services/modal-service.service';
@@ -18,6 +18,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   public subtotal: number = 0;
   public cantidad: number = 0
   public cantidadAnterior: number = 0;
+  public btnEnable: boolean = false;
 
 
 
@@ -36,7 +37,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-  
+
 
 
 
@@ -89,11 +90,11 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   delete(i: number) {
 
-    this.coffeeFilter.splice(i,1);
+    this.coffeeFilter.splice(i, 1);
 
     this.coffeeService.borrarCarrito();
     localStorage.setItem('productos', JSON.stringify(this.coffeeFilter))
-    if(this.coffeeFilter.length === 0){
+    if (this.coffeeFilter.length === 0) {
       this.cantidadCarrito(0)
 
     }
@@ -135,10 +136,26 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   decrementarCarrito(i: number) {
+
     if (this.coffeeFilter[i].cantidad! > 1) {
       this.coffeeFilter[i].cantidad! -= 1;
       this.subtotal -= this.coffeeFilter[i].price!;
 
+      this.cantidad -= 1;
+      this.cantidadCarrito(-1);
+    this.coffeeService.borrarCarrito();
+    this.agregarCarrito(this.coffeeFilter);
+
+
+
+
+
+
+
+    }
+    if(this.coffeeFilter[i].cantidad! <= 1){
+      this.btnEnable = false;
+      console.log(this.btnEnable)
     }
 
   }
@@ -148,6 +165,9 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   reset() {
+    for(let producto  of this.coffeeFilter){
+      this.cantidad
+    }
     this.cantidad = 0
     this.cantidadCarrito(this.cantidad)
     this.coffeeService.borrarCarrito();

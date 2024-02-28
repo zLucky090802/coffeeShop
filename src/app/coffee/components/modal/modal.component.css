@@ -48,16 +48,22 @@
 }
 
 .agregar{
-  float: right;
-  margin: 0;
+
+  border: 1px solid #B9B8B8;
+
+  justify-content: space-around;
+
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
 }
 
 .agregar button{
-  background-color: black;
-  color: white;
-  border-radius: 30px;
-  border: 1px black solid;
-  align-items: center;
+  border: none;
+  color: #C29C6B;
+
+
+
 }
 
 .container{
@@ -71,19 +77,15 @@
 }
 
 .agregar button:hover{
-  background-color: white;
-  color: black;
-
-  border: 1px black solid;
-  align-items: center;
+ cursor: pointer;
 }
 
 .agregar-carrito button{
   width: 100%;
-  background-color: black;
+  background-color: #C29C6B;
   color: white;
   border: none;
-  border-radius: 20px;
+
  padding: 5px;
 }
 

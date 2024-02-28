@@ -18,6 +18,7 @@ import { FooterComponentComponent } from './components/footer-component/footer-c
 
 
 
+
 @NgModule({
   declarations: [
     LayoutPageComponent,
@@ -28,9 +29,10 @@ import { FooterComponentComponent } from './components/footer-component/footer-c
     ModalComponent,
 
     NavBarComponent,
-        ShoppingCartComponent,
-        HomePageComponent,
-        FooterComponentComponent
+    ShoppingCartComponent,
+    HomePageComponent,
+    FooterComponentComponent,
+
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,9 @@ import { FooterComponentComponent } from './components/footer-component/footer-c
 
 
   ],
+  exports:[
+    NavBarComponent,
+  ]
 
 })
 export class CoffeeModule { }

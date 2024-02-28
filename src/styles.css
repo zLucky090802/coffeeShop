@@ -5,6 +5,12 @@
  padding: 0;
 }
 
+
+html{
+  scroll-behavior: smooth;
+  font-family: 'Roboto';
+}
+
 body::-webkit-scrollbar{
   width: 7px;
 }

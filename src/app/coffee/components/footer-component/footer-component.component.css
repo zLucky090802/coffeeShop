@@ -2,7 +2,7 @@
   background-color: black;
   text-align: center;
   color: white;
-
+  border-top: 1px solid #C29C6B;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,11 +20,7 @@
   margin: 20px;
 }
 
-.footer hr{
-  color: #C29C6B;
-  width: 100vw;
-  margin-top: 20px;
-}
+
 .footer p{
   padding-left: 80px;
   padding-right: 80px;
@@ -33,7 +29,7 @@
 .share {
   justify-content: center;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 1.5rem;
   color: white;
 }

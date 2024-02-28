@@ -156,7 +156,7 @@
 #lastprice{
   text-decoration: line-through;
   color: #8D8D8C;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .precio{
@@ -186,5 +186,15 @@
   .precio{
     font-size: 2rem;
     margin: 10px;
+  }
+}
+@media (max-width:340px) {
+  .card{
+    width: 200px;
+    height: 200px;
+  }
+
+  img{
+    display: none;
   }
 }

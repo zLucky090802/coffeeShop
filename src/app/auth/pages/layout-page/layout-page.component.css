@@ -1,0 +1,25 @@
+.background{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(src\assets\background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+}
+
+.form{
+  text-align: left;
+  background-color: white;
+  /* min-height: 250px;
+  min-width: 250px; */
+  min-width: 450px;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 14px 14px 30px -12px rgba(184,182,184,1);
+-moz-box-shadow: 14px 14px 30px -12px rgba(184,182,184,1);
+box-shadow: 14px 14px 30px -12px rgba(184,182,184,1);
+border-radius: 10px;
+}

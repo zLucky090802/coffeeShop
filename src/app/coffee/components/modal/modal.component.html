@@ -13,7 +13,7 @@
           <h4>{{coffeProduct.title}}</h4>
           <p>{{coffeProduct.ingredients}}</p>
           <div class="container">
-            <p>{{price }}</p>
+            <p>{{price | currency }}</p>
             <div class="agregar">
               <button (click)="disminuir()">-</button>
               {{cantidad}}
@@ -30,7 +30,7 @@
 
     </div>
     <div class="agregar-carrito">
-      <button (click)="agregarCarrito()">
+      <button (click)="agregarCarrito()" routerLink="shoppingCart">
         agregar al carrito
        </button>
     </div>

@@ -1,4 +1,4 @@
-<div class="cart" *ngIf="coffeeFilter.length > 0; else carritoVacio">
+<div class="cart" *ngIf="coffeeFilter.length > 0; else Empty">
   <div class="productos">
     <div class="product" *ngFor="let producto of coffeeFilter; let i = index">
 
@@ -16,8 +16,9 @@
         <div class="footer">
 
           <div class="cantidad">
-            <p>cantidad:</p>
-            <button (click)="decrementarCarrito(i)">-</button>
+
+            <button (click)="decrementarCarrito(i)" [disabled]="btnEnable"
+              [ngStyle]="{'btn_disable': btnEnable === false}">-</button>
             {{producto.cantidad}}
             <button (click)="aumentarCarrito(i)">+</button>
           </div>
@@ -31,7 +32,7 @@
     </div>
   </div>
 
-  <div class="total">
+   <div class="total">
 
     <h2>Resumen</h2>
     <div class="resumen">
@@ -55,15 +56,17 @@
         <p id="total">{{subtotal | currency}}</p>
       </div>
     </div>
+    <button class="boton-pagar" routerLink="/payment" (click)="reset()">Ir a pagar</button>
 
 
 
-    <button class="boton-pagar" (click)="openDialog('300ms','150ms')">Ir a pagar</button>
 
   </div>
 </div>
 
-<ng-template #carritoVacio>
+<footer-component></footer-component>
+
+<ng-template #Empty>
   <div class="container">
     <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="">
 

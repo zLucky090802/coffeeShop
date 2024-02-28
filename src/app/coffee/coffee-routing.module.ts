@@ -4,6 +4,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
+
 const routes: Routes = [{
   path:'',
   component:LayoutPageComponent,
@@ -15,7 +16,7 @@ const routes: Routes = [{
     {
       path:'shoppingCart',
       component: ShoppingCartComponent
-      
+
     },
     {
       path:'**',
@@ -24,7 +25,9 @@ const routes: Routes = [{
 
   ]
 
-}];
+},
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
