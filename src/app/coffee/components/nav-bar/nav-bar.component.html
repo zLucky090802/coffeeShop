@@ -2,7 +2,11 @@
  <img  routerLink="list" src="assets/CafeLogo.png" class="nav-left" alt="logo">
 
   <div class="container">
-
+    <div class="">
+      <label class="btn-nav" routerLink="list" fragment="home">home</label>
+      <label class="btn-nav" routerLink="list"  fragment="irAqui">products</label>
+      <label class="btn-nav" routerLink="list"  fragment="contact">contact us</label>
+    </div>
     <span>{{user?.user}}</span>
     <div>
 
@@ -13,13 +17,37 @@
       </ng-template>
 
 
-      <div class="nav-right material-symbols-outlined notify" routerLink="shoppingCart">shopping_cart</div>
+      <div class="nav-right material-symbols-outlined notify" routerLink="shoppingCart" id="cartShopping">shopping_cart</div>
 
     </div>
+    <label class="material-symbols-outlined" id="menu" for="menu-btn">
+      menu
+      </label>
+      <div class="btn-menu">
+        <label for=""></label>
+        <label for=""></label>
+        <label for=""></label>
+      </div>
     <span *ngIf="user" id="log-out" class="material-symbols-outlined" (click)="logOut()">
       logout
     </span>
 
+    <input type="checkbox" id="menu-btn">
+
+    <div class="container-menu" >
+      <div class="cont-menu">
+        <nav>
+          <a routerLink="list" fragment="home" >Home</a>
+          <a routerLink="list"  fragment="irAqui" >Products</a>
+          <a routerLink="list"  fragment="contact" >Contact Us</a>
+          <a routerLink="shoppingCart"  >Shopping Car</a>
+
+        </nav>
+        <label for="menu-btn" class="material-symbols-outlined">
+          close
+          </label>
+      </div>
+    </div>
   </div>
 
 

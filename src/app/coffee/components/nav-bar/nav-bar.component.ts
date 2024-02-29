@@ -16,8 +16,10 @@ export class NavBarComponent implements OnInit {
 
   cantidad: number = 0;
   coffeeFilter: CoffeeProduct[] = []
+  active: boolean = false;
   constructor(private modalService: ModalService, private coffeeService: CoffeeService,private authService:AuthService, private route: Router) { }
   ngOnInit(): void {
+
     this.cargarCarrito()
 
     this.modalService.showCantidad.subscribe(value => {
@@ -35,6 +37,9 @@ export class NavBarComponent implements OnInit {
     )
 
   }
+
+
+
 
   get user():User | undefined{
    return this.authService.getUser();
